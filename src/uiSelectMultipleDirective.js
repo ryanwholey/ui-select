@@ -106,7 +106,7 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
             result = $select.parserResult.modelMapper(scope, locals);
             if($select.parserResult.trackByExp){
                 var matches = /\.(.+)/.exec($select.parserResult.trackByExp);
-                if(matches.length>0 && result[matches[1]] == value[matches[1]]){
+                if(matches && matches.length>0 && result[matches[1]] == value[matches[1]]){
                     resultMultiple.unshift(list[p]);
                     return true;
                 }
